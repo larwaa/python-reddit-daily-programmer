@@ -6,13 +6,12 @@ def n_queens(list):
         return False
 
     for i in range(SIZE):
-        for j in range(1, SIZE):
-            el = list[i]
+        for j in range(1, SIZE - i):
+            queen_row = list[i]
 
-            if i + j < len(list):
-                diagonal = list[i + j]
-                if el == diagonal + j or el == diagonal - j:
-                    return False
+            next_queen_row = list[i + j]
+            if queen_row + j == next_queen_row or queen_row - j == next_queen_row:
+                return False
     return True
 
 
@@ -27,8 +26,6 @@ def main():
     print(n_queens(list3))
     print(n_queens(list4))
     print(n_queens(list5))
-
-
 
 
 main()
