@@ -11,4 +11,5 @@ X = (1 - u) ** (-1/th) * k
 plt.xlim(400, 2000)
 plt.hist(X/1000, 200, density = True, facecolor = "navy", edgecolor = "black")
 plt.xlabel("Årsinntekt (i 1000 kroner)")
+plt.savefig("history.png")
 plt.show()
