@@ -5,6 +5,8 @@ def n_queens(list):
     if len(set(list)) != len(list):
         return False
 
+
+    [list[i] + i for i in range(len(list))]
     for i in range(SIZE):
         for j in range(1, SIZE - i):
             queen_row = list[i]
@@ -13,6 +15,19 @@ def n_queens(list):
             if queen_row + j == next_queen_row or queen_row - j == next_queen_row:
                 return False
     return True
+
+
+def distinct(list):
+    return len(list) == len(set(list))
+
+
+def enumerate_queens(list):
+    enumerated = enumerate(list)
+    list1 = [x - i for i, x in enumerated]
+    list2 = [x + i for i, x in enumerated]
+    return distinct(list) and distinct(list1) and distinct(list2)
+
+
 
 
 def main():
